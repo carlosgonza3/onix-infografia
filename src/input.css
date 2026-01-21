@@ -27,55 +27,113 @@
   font-display: swap;
 }
 
-* {
-    box-sizing: border-box;
-    padding: 0px;
-    margin: 0px;
+.onix-light {
+  font-family: "Onix", system-ui, sans-serif;
+  font-weight: 300;
+}
+
+.onix-regular {
+  font-family: "Onix", system-ui, sans-serif;
+  font-weight: 400;
+}
+
+.onix-bold {
+  font-family: "Onix", system-ui, sans-serif;
+  font-weight: 700;
+}
+:root{
+    --card-bg: #F5F5F5;
+    --text: #8a8a8a;
+    --text-strong: #7a7a7a;
+    --maxw: 980px;
+    --radius: 26px;
+}
+
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: #fff;
+    color: #111;
 }
 
 .view-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 12px 12px 40px;
 }
 
 .header-container {
     position: relative;
-    min-width: 504px;
-    height: 228px;
+    width: 100%;
+    aspect-ratio: 16 / 7;      /* controls the hero height */
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    border-radius: 2px;
 }
 
-.header-container .background {
+.header-container img.bg {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    transform: scale(1.06);
 }
 
-.header-container .logo {
+/* optional subtle dark overlay */
+.header-container::after {
+    content: "";
     position: absolute;
-    aspect-ratio: auto;
-    width: 230px;
+    inset: 0;
+    background: rgba(0,0,0,0.15);
 }
 
-.about-us {
+.header-container img.logo {
     position: absolute;
-    width: 477px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: min(420px, 70%);
     height: auto;
-    background-color: #F5F5F5;
-    top: 242px;
-    border-radius: 13px;
+    z-index: 2;
+}
+
+/* CARD */
+.about-us {
+    margin: 22px auto 0;
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    text-align: center;
+    color: var(--text);
+    line-height: 1.55;
 }
 
 .about-us p {
-    padding: 10px;
-    text-align: center;
-    font-size: 12px;
-    line-height: 100%;
-    font-weight: 400;
+    margin: 0;
+    font-size: 20px;
+    letter-spacing: 0.2px;
+}
+
+.about-us p + p {
+    margin-top: 22px;
+}
+
+.about-us p.last {
+    margin-top: 28px;
+    font-weight: 700;
+    color: var(--text-strong);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    font-size: 18px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+    .view-container { padding: 10px 10px 28px; }
+    .about-us { padding: 22px 16px; border-radius: 22px; }
+    .about-us p { font-size: 16px; }
+    .about-us p.last { font-size: 14px; }
+    .about-us p + p { margin-top: 16px; }
 }
