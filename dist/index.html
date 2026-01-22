@@ -1,36 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ONIX</title>
-  <link rel="stylesheet" href="./output.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ONIX</title>
+    <link rel="stylesheet" href="./output.css">
+  </head>
+  <body>
 
-<body>
-  <div class="view-container">
-    <div class="header-container">
-      <img class="bg" src="assets/header-bg.jpg" alt="Header background" />
-      <img class="logo" src="assets/onix-logo-white.png" alt="ONIX logo" />
+    <div class="view-container">
+
+      <div class="header-container">
+        <img class="bg" src="assets/header-bg.jpg" alt="Header background" />
+        <img class="logo" src="assets/onix-logo-white.png" alt="ONIX logo" />
+      </div>
+
+      <div class="content-container">
+
+        <div class="about-us">
+
+          <p class="onix-light">
+            En ONIX no solo hacemos colchones, redefinimos el descanso.
+          </p>
+
+          <p class="onix-light">
+            Nuestra tecnología avanzada de sueño se adapta a tu cuerpo y a tu estilo al
+            dormir, ofreciendo un confort personalizado que responde a cada una de tus
+            necesidades.
+          </p>
+
+          <p class="onix-light">
+            Nuestro propósito es que este no sea solo tu colchón, sino tu nuevo lugar favorito.
+          </p>
+
+          <p class="last onix-regular">
+            PORQUE CUANDO DUERMES MEJOR, VIVES MEJOR Y ESO EMPIEZA CON ONIX.
+          </p>
+        </div>
+        
+        <div class="section-1">
+
+            <div class="img-container">
+                <img id="sec1-img" src="./assets/sec1-lady-bed.jpg" alt="Mujer leyendo en la cama">
+            </div>
+            
+            <div class="text-container">
+
+              <p id="sec1-title" class="last onix-regular title"> Nuestra Filosofía </p>
+                
+              <div id="description-height">
+                <p id="sec1-text" class="onix-light description">
+                    Descansar bien no es un lujo, sino la base para vivir mejor y parte de la idea de que cada día puede
+                    comenzar con el pie derecho cuando el cuerpo y la mente encuentran verdadero equilibrio durante la noche.
+                </p>
+              </div>
+              
+              <a id="sec1-b0" class="last onix-regular title button selected" onclick="sec1_toggle(0)">Nuestra Filosofía</a>
+              <hr/>
+              <a id="sec1-b1" class="last onix-regular title button" onclick="sec1_toggle(1)">Misión</a>
+              <hr/>
+              <a id="sec1-b2" class="last onix-regular title button" onclick="sec1_toggle(2)">Visión</a>
+            </div>
+
+        </div>
+
+      </div>
     </div>
+    
+    <script src="./main.js"></script>
 
-    <div class="about-us">
-      <p class="onix-light">En ONIX no solo hacemos colchones, redefinimos el descanso.</p>
-
-      <p class="onix-light">
-        Nuestra tecnología avanzada de sueño se adapta a tu cuerpo y a tu estilo al
-        dormir, ofreciendo un confort personalizado que responde a cada una de tus
-        necesidades.
-      </p>
-
-      <p class="onix-light">
-        Nuestro propósito es que este no sea solo tu colchón, sino tu nuevo lugar favorito.
-      </p>
-
-      <p class="last onix-regular">
-        PORQUE CUANDO DUERMES MEJOR, VIVES MEJOR Y ESO EMPIEZA CON ONIX.
-      </p>
-    </div>
-  </div>
-</body>
+  </body>
 </html>
