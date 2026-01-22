@@ -243,6 +243,7 @@
         border-radius: 12px;
         text-decoration: none;
         line-height: 1.2;
+        font-size: larger;
     }
 
     .section-1 .text-container .title.button.selected {
@@ -251,8 +252,8 @@
     }
 
     .section-1 .text-container .title.button {
-        color: #C4BDB5;
-        font-size: 20px;
+    margin-inline: auto;   /* <-- centers the block */
+    text-align: center;    /* optional, keeps text centered */
     }
 
     .section-1 .text-container .title.button:hover {
