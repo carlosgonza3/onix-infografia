@@ -410,7 +410,94 @@
 
 /* ------------------------------------- Section 6 */
 
+.section-6{
+  margin: 25px auto 0;
+  width: 100%;
+  max-width: 1100px;
+  padding: 42px 46px 42px 0px;
+  background: #F5F5F5;
+  border-radius: 37px;
+  overflow: hidden;
+  height: fit-content;
+}
 
+.section-6 .title{
+  text-align: center;
+  padding: 18px 0 34px;
+  color: #808080;
+  font-size: x-large;
+  font-weight: 500;
+  letter-spacing: .02em;
+}
+
+.section-6 .sec6-content-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.section-6 .sec6-left{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 0;
+}
+
+.section-6 .sec6-left img{
+  width: 100%;
+  height: 1000px;
+  aspect-ratio: auto;
+  display: block;
+  transform: translateX(-80px);
+}
+
+.section-6 .sec6-right{
+  padding: 0;
+}
+
+.section-6 .content{
+  color: #808080;
+  font-size: 26px;
+  line-height: 1.8;
+  text-align: center;
+  max-width: 520px;
+  margin-inline: auto;
+}
+
+@media (max-width: 800px){
+
+    .section-6{
+        padding: 28px 22px;
+        height: 800px;
+    }
+
+    .section-6 .sec6-right{
+        order: -1;
+        align-self: flex-start;
+    }
+
+    .section-6 .sec6-content-container{
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .section-6 .content {
+        font-size: 20px;
+    }
+
+    .section-6 .sec6-left img{
+        width: 100%;
+        height: 800px;
+        transform: none;
+    }
+}
+
+    .section-6 .sec6-2 {
+        height: 100%;
+        width: 100%;
+        scale: 1.12;
+    }
 
 /* ------------------------------------- Section 7 */
 
@@ -435,4 +522,31 @@
 .section-7 p {
     padding-left: 10px;
     font-size: smaller;
+}
+
+/* Testing */
+
+.layers-scroll{
+  height: 80vh;                 /* scrollable area height */
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  border-radius: 30px;
+}
+
+.layer{
+  height: 80vh;                 /* each slide fills container */
+  scroll-snap-align: start;
+  display: grid;
+  place-items: center;
+}
+
+.layer {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .35s ease, transform .35s ease;
+}
+
+.layer.is-active {
+  opacity: 1;
+  transform: translateY(0);
 }

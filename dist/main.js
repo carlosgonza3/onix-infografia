@@ -42,3 +42,17 @@ function sec1_toggle(target) {
     text.classList.remove("sec1-fade-out");
   }, 180);
 }
+
+
+
+const root = document.querySelector('.layers-scroll');
+const steps = document.querySelectorAll('.layer');
+
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('is-active');
+    else e.target.classList.remove('is-active');
+  });
+}, { root, threshold: 0.9 });
+
+steps.forEach(s => obs.observe(s));
