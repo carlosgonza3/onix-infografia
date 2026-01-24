@@ -1,7 +1,7 @@
 
 
 const sec1_titles = ["Nuestra Filosofía", "Misión", "Visión"];
-const sec1_images = ["sec1-lady-bed.jpg", "sec1-sheeps.jpg", "sec1-bed.png"];
+const sec1_images = ["sec1-sheeps.jpg", "sec1-mision.png", "sec1-bed.png"];
 const sec1_alt = [
   "Imagen de Mujer leyendo en la cama",
   "Imagen de horda de ovejas blancas con una oveja negra",
