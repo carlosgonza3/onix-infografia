@@ -492,6 +492,16 @@
     }
 }
 
+    @media (max-width:300px){
+        .layers-scroll {
+            height: 300px;
+        }
+        .section-6 .sec6-left img{
+              transform: translateX(-80px);
+        }
+    }
+
+
     .section-6 .sec6-2 {
         height: 100%;
         width: 100%;
