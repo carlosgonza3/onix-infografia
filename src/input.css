@@ -333,6 +333,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        text-align: center;
     }
 
     .section-4 .sec4-logo {
@@ -346,6 +347,8 @@
     }
 
     .section-4 .sec4-content {
+        padding-left: 20px;
+        padding-right: 20px;
         color: #030303;
         font-size: larger;
     }
