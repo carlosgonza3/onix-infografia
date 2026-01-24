@@ -4,7 +4,6 @@
 
 /* ================================= Font Settings */
 
-    /* Custom font: OPEN SAUCE ONE - Light  */
     @font-face {
         font-family: "Onix";
         src: url("./fonts/open-sauce.one-light.ttf") format("truetype");
@@ -17,7 +16,6 @@
         font-weight: 300;
     }
 
-    /* Custom font: OPEN SAUCE ONE - Regular  */
     @font-face {
         font-family: "Onix";
         src: url("./fonts/open-sauce.one-regular.ttf") format("truetype");
@@ -30,7 +28,6 @@
         font-weight: 400;
     }
 
-    /* Custom font: OPEN SAUCE ONE - Bold  */
     @font-face {
         font-family: "Onix";
         src: url("./fonts/open-sauce.sans-bold.ttf") format("truetype");
@@ -180,14 +177,15 @@
 
     .section-1 .text-container {
         height: 550px;
+        display: flex;
         width: 100%;
         text-align: center;
         background-color: #F5F5F5;
         border-radius: 37px;
-        display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: flex-start;
         padding: 20px 60px 20px 60px;
+        gap: 16px;
     }
 
     #sec1-title {
@@ -197,13 +195,15 @@
     }
 
     #sec1-text {
+        overflow-y: auto;
         color: #808080;
-        height: 200px;
+        height: auto;
     }
 
     .button-link a {
         padding: 10px;
         color: #808080;
+        flex: 0 0 auto;
     }
 
     .button-link a:hover {
@@ -222,23 +222,25 @@
         padding: 10px;
     }
 
+    .section-1 .button-group {
+        margin-top: auto;
+    }
+
 
     @media (max-width: 800px) {
-        .section-1 {
-            flex-direction: column;
-        }
-
-        .section-1 .text-container {
-            height: 530px;
-            margin-top: 15px;
-        }
-
-        .section-1 .img-container {
-            height: 500px;
-        }
+    .section-1 {
+        flex-direction: column;
+    }
+    .section-1 .text-container {
+        height: auto !important;
+        min-height: unset !important;
+        justify-content: flex-start;
+    }
 
     }
 
+
+    
 /* ------------------------------------- Section 2 */
 
     .section-2 {
@@ -347,8 +349,8 @@
     }
 
     .section-4 .sec4-content {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
         color: #030303;
         font-size: larger;
     }
