@@ -53,6 +53,6 @@ const obs = new IntersectionObserver((entries) => {
     if (e.isIntersecting) e.target.classList.add('is-active');
     else e.target.classList.remove('is-active');
   });
-}, { root, threshold: 0.9 });
+}, { root, threshold: 0. });
 
 steps.forEach(s => obs.observe(s));
