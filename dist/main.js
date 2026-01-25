@@ -1,5 +1,3 @@
-
-
 const sec1_titles = ["Nuestra Filosofía", "Misión", "Visión"];
 const sec1_images = ["sec1-sheeps.jpg", "sec1-mision.png", "sec1-bed.png"];
 const sec1_alt = [
@@ -43,16 +41,155 @@ function sec1_toggle(target) {
   }, 180);
 }
 
+var layersData = [
+            {
+                name: "Vista Completa",
+                description: "En ONIX, diseño y tecnología se unen para crear un colchón que respira, se adapta y te restaura mientras dormís.",
+                badge: "Vista General"
+            },
+            {
+                name: "CoolTouch Advanced Regulated Stretch Knit",
+                description: "Tecnología transpirable al tacto que ayuda a evitar la acumulación de calor. Mantiene la superficie fresca y transpirable. Aporta una sensación de suavidad y lujo.",
+                badge: "Capa 1 de 7"
+            },
+            {
+                name: "Espuma de Confort Transpirable (2\")",
+                description: "Se amolda al cuerpo sin hundirse. Reduce puntos de presión y favorece la circulación del aire.",
+                badge: "Capa 2 de 7"
+            },
+            {
+                name: "Espuma Especial de Soporte (1.5\")",
+                description: "Refuerza las zonas clave del cuerpo. Mejora la postura y la alineación de la columna. Evita el hundimiento al sentarse en los bordes.",
+                badge: "Capa 3 de 7"
+            },
+            {
+                name: "Látex Firme 100% Orgánico (1.5\")",
+                description: "Mantiene la postura sin hundimientos. Respuesta elástica que acompaña el movimiento. Material natural, hipoalergénico y resistente.",
+                badge: "Capa 4 de 7"
+            },
+            {
+                name: "Resortes Pocket Coil Serie 900",
+                description: "Resortes embolsados individualmente. Soporte específico en hombros, caderas y espalda. Minimiza la transferencia de movimiento entre individuos",
+                badge: "Capa 5 de 7"
+            },
+            {
+                name: "Espuma de Confort Firme (0.75\")",
+                description: "Aporta firmeza y estabilidad. Previene deformaciones con el tiempo. Refuerza las zonas de mayor peso.",
+                badge: "Capa 6 de 7"
+            },
+            {
+                name: "Espuma de Confort Firme (0.75\")",
+                description: "Aporta firmeza y estabilidad. Previene deformaciones con el tiempo. Refuerza las zonas de mayor peso.",
+                badge: "Capa 7 de 7"
+            }
+        ];
 
+        var currentLayer = 0;
+        var layerImages = document.querySelectorAll('.layer-img');
+        var prevBtn = document.getElementById('prevBtn');
+        var nextBtn = document.getElementById('nextBtn');
+        var layerTitle = document.getElementById('layerTitle');
+        var layerDescription = document.getElementById('layerDescription');
+        var layerBadge = document.getElementById('layerBadge');
+        var progressIndicator = document.getElementById('progressIndicator');
+        var isAnimating = false;
 
-const root = document.querySelector('.layers-scroll');
-const steps = document.querySelectorAll('.layer');
+        // Create progress dots
+        for (var i = 0; i < layersData.length; i++) {
+            var dot = document.createElement('div');
+            dot.className = 'progress-dot';
+            if (i === 0) dot.classList.add('active');
+            progressIndicator.appendChild(dot);
+        }
 
-const obs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) e.target.classList.add('is-active');
-    else e.target.classList.remove('is-active');
-  });
-}, { root, threshold: 0. });
+        function updateLayers() {
+            if (isAnimating) return;
+            isAnimating = true;
 
-steps.forEach(s => obs.observe(s));
+            var separation = 80;
+            var stackedSpacing = 35;
+            
+            layerImages.forEach(function(img, index) {
+                var layerIndex = index + 1;
+                var totalLayers = layerImages.length;
+                
+                if (currentLayer === 0) {
+                    var centerOffset = -((totalLayers - 1) * stackedSpacing) / 2;
+                    var compactOffset = centerOffset + (index * stackedSpacing);
+                    img.style.transform = 'translateY(' + compactOffset + 'px)';
+                    img.style.opacity = '1';
+                    img.style.filter = 'none';
+                    img.style.zIndex = totalLayers - index;
+                } else {
+                    var offset = (layerIndex - currentLayer) * separation;
+                    img.style.transform = 'translateY(' + offset + 'px)';
+                    
+                    if (layerIndex === currentLayer) {
+                        img.style.opacity = '1';
+                        img.style.filter = 'none';
+                        img.style.zIndex = '100';
+                    } else {
+                        img.style.opacity = '0.4';
+                        img.style.filter = 'brightness(0.7)';
+                        img.style.zIndex = totalLayers - index;
+                    }
+                }
+            });
+
+            layerTitle.textContent = layersData[currentLayer].name;
+            layerDescription.textContent = layersData[currentLayer].description;
+            layerBadge.textContent = layersData[currentLayer].badge;
+
+            prevBtn.disabled = currentLayer === 0;
+            nextBtn.disabled = currentLayer === layersData.length - 1;
+
+            var dots = progressIndicator.querySelectorAll('.progress-dot');
+            dots.forEach(function(dot, index) {
+                if (index === currentLayer) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+
+            setTimeout(function() {
+                isAnimating = false;
+            }, 700);
+        }
+
+        prevBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (currentLayer > 0 && !isAnimating) {
+                currentLayer--;
+                updateLayers();
+            }
+        });
+
+        nextBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (currentLayer < layersData.length - 1 && !isAnimating) {
+                currentLayer++;
+                updateLayers();
+            }
+        });
+
+        // Prevent double-tap zoom on buttons for mobile
+        prevBtn.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            if (currentLayer > 0 && !isAnimating) {
+                currentLayer--;
+                updateLayers();
+            }
+        });
+
+        nextBtn.addEventListener('touchend', function(e) {
+            e.preventDefault();
+            if (currentLayer < layersData.length - 1 && !isAnimating) {
+                currentLayer++;
+                updateLayers();
+            }
+        });
+
+        updateLayers();

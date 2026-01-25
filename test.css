@@ -1,0 +1,25 @@
+.container {
+    margin: 100px 300px 400px 300px;
+}
+
+.section-6 {
+    background-color: #F5F5F5;
+    width: 100%;
+    height: auto;
+    border-radius: 37px;
+}
+
+.section-6 .onix-regular.title {
+    font-size: larger;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.section-6 .layers-scroll {
+    display: flex;
+    flex-direction: row;
+}
+
+.section-6 .left img {
+    margin-top: -90px;
+}
