@@ -41,7 +41,9 @@ function sec1_toggle(target) {
   }, 180);
 }
 
-var layersData = [
+
+
+        var layersData = [
             {
                 name: "Vista Completa",
                 description: "En ONIX, diseño y tecnología se unen para crear un colchón que respira, se adapta y te restaura mientras dormís.",
@@ -50,37 +52,32 @@ var layersData = [
             {
                 name: "CoolTouch Advanced Regulated Stretch Knit",
                 description: "Tecnología transpirable al tacto que ayuda a evitar la acumulación de calor. Mantiene la superficie fresca y transpirable. Aporta una sensación de suavidad y lujo.",
-                badge: "Capa 1 de 7"
+                badge: "Capa 1 de 6"
             },
             {
                 name: "Espuma de Confort Transpirable (2\")",
                 description: "Se amolda al cuerpo sin hundirse. Reduce puntos de presión y favorece la circulación del aire.",
-                badge: "Capa 2 de 7"
+                badge: "Capa 2 de 6"
             },
             {
                 name: "Espuma Especial de Soporte (1.5\")",
                 description: "Refuerza las zonas clave del cuerpo. Mejora la postura y la alineación de la columna. Evita el hundimiento al sentarse en los bordes.",
-                badge: "Capa 3 de 7"
+                badge: "Capa 3 de 6"
             },
             {
                 name: "Látex Firme 100% Orgánico (1.5\")",
                 description: "Mantiene la postura sin hundimientos. Respuesta elástica que acompaña el movimiento. Material natural, hipoalergénico y resistente.",
-                badge: "Capa 4 de 7"
+                badge: "Capa 4 de 6"
             },
             {
                 name: "Resortes Pocket Coil Serie 900",
                 description: "Resortes embolsados individualmente. Soporte específico en hombros, caderas y espalda. Minimiza la transferencia de movimiento entre individuos",
-                badge: "Capa 5 de 7"
+                badge: "Capa 5 de 6"
             },
             {
                 name: "Espuma de Confort Firme (0.75\")",
                 description: "Aporta firmeza y estabilidad. Previene deformaciones con el tiempo. Refuerza las zonas de mayor peso.",
-                badge: "Capa 6 de 7"
-            },
-            {
-                name: "Espuma de Confort Firme (0.75\")",
-                description: "Aporta firmeza y estabilidad. Previene deformaciones con el tiempo. Refuerza las zonas de mayor peso.",
-                badge: "Capa 7 de 7"
+                badge: "Capa 6 de 6"
             }
         ];
 
@@ -116,19 +113,20 @@ var layersData = [
                 if (currentLayer === 0) {
                     var centerOffset = -((totalLayers - 1) * stackedSpacing) / 2;
                     var compactOffset = centerOffset + (index * stackedSpacing);
-                    img.style.transform = 'translateY(' + compactOffset + 'px)';
+                    img.style.transform = 'translateY(' + compactOffset + 'px) scale(1)';
                     img.style.opacity = '1';
                     img.style.filter = 'none';
                     img.style.zIndex = totalLayers - index;
                 } else {
                     var offset = (layerIndex - currentLayer) * separation;
-                    img.style.transform = 'translateY(' + offset + 'px)';
                     
                     if (layerIndex === currentLayer) {
+                        img.style.transform = 'translateY(' + offset + 'px) scale(1.45)';
                         img.style.opacity = '1';
                         img.style.filter = 'none';
                         img.style.zIndex = '100';
                     } else {
+                        img.style.transform = 'translateY(' + offset + 'px) scale(1)';
                         img.style.opacity = '0.4';
                         img.style.filter = 'brightness(0.7)';
                         img.style.zIndex = totalLayers - index;
