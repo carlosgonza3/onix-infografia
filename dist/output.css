@@ -558,14 +558,6 @@ video {
   visibility: visible;
 }
 
-.mt-2 {
-  margin-top: 0.5rem;
-}
-
-.mt-8 {
-  margin-top: 2rem;
-}
-
 .block {
   display: block;
 }
@@ -1174,11 +1166,13 @@ body {
   }
 }
 
+/* ------------------------------------- Section 6 */
+
 .section-6 {
   margin-top: 25px;
   padding: 4rem 2rem 0 2rem;
   background-color: #F5F5F5;
-  min-height: 70vh;
+  min-height: 40vh;
   border-radius: 37px;
   overflow: hidden;
 }
@@ -1192,6 +1186,10 @@ body {
   letter-spacing: 0.05em;
 }
 
+.section-6 .title {
+  margin-bottom: 0px;
+}
+
 .layers-scroll {
   max-width: 1200px;
   margin: 0 auto;
@@ -1202,6 +1200,8 @@ body {
 }
 
 .left {
+  scale: 1.80;
+  transform: translateX(-100px);
   position: relative;
   height: 600px;
   display: flex;
@@ -1211,19 +1211,28 @@ body {
   overflow: hidden;
   /* Fade at top & bottom */
   -webkit-mask-image: linear-gradient(
-                to bottom,
-                transparent 0%,
-                black 12%,
-                black 88%,
-                transparent 100%
-            );
+            to bottom,
+            transparent 0%,
+            black 12%,
+            black 88%,
+            transparent 100%
+        );
   mask-image: linear-gradient(
-                to bottom,
-                transparent 0%,
-                black 12%,
-                black 88%,
-                transparent 100%
-            );
+            to bottom,
+            transparent 0%,
+            black 12%,
+            black 88%,
+            transparent 100%
+        );
+}
+
+.left .extra-2 {
+  margin-top: 8px;
+}
+
+.left .extra {
+  margin-top: 30px;
+  scale: 0.80;
 }
 
 .layer-container {
@@ -1278,10 +1287,6 @@ body {
   line-height: 1.3;
 }
 
-.section-6 .title {
-  margin-bottom: 0 !important;
-}
-
 .onix-regular.content.sec6-text {
   color: #6b7280;
   line-height: 1.7;
@@ -1297,11 +1302,11 @@ body {
 }
 
 .bullet-item {
-  background: #565656BF;
+  background: #808080;
   color: white;
   padding: 0.85rem 1.25rem;
   border-radius: 50px;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   line-height: 1.3;
   text-align: center;
 }
@@ -1373,45 +1378,82 @@ body {
 
 @media (max-width: 768px) {
   .section-6 {
-    min-height: 100vh;
-    padding-bottom: 2rem;
+    min-height: 40vh;
+    padding: 2rem 1rem 2rem 1rem;
+    margin-top: 50px;
   }
 
   .layers-scroll {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .left {
-    height: 350px;
+    scale: 1.0;
+    transform: translateX(0);
     order: 1;
   }
 
+  .left .extra-2 {
+    margin-top: 16px;
+  }
+
+  .left .extra {
+    scale: 0.90;
+  }
+
   .layer-container {
-    height: 300px;
+    height: 250px;
   }
 
   .sec6-right {
     order: 2;
-    padding: 2rem;
+    padding: 1.5rem;
+    min-height: auto;
   }
 
   .onix-regular.title {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .layer-badge {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+    margin-bottom: 1rem;
   }
 
   .layer-title {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
   }
 
   .onix-regular.content.sec6-text {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .layer-bullets {
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
   }
 
   .bullet-item {
-    font-size: 1rem;
-    padding: 1rem 1.5rem;
+    font-size: 0.8rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .nav-buttons {
+    margin-bottom: 1.4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .nav-buttons button {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.9rem;
   }
 }
 

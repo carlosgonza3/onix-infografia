@@ -216,7 +216,7 @@
                     var offset = (layerIndex - currentLayer) * separation;
                     
                     if (layerIndex === currentLayer) {
-                        img.style.transform = 'translateY(' + offset + 'px) scale(1.45)';
+                        img.style.transform = 'translateY(' + offset + 'px) scale(1.25)';
                         img.style.opacity = '1';
                         img.style.filter = 'none';
                         img.style.zIndex = '100';
@@ -302,3 +302,4 @@
         });
 
         updateLayers();
+
