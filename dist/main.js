@@ -7,12 +7,12 @@
             },
             {
                 title: "Misión",
-                text: "Nuestra misión es proporcionar productos de descanso de la más alta calidad que transformen la forma en que las personas duermen, mejorando su bienestar físico y mental a través de soluciones innovadoras y accesibles.",
+                text: "Ofrecer mucho más que un colchón: una nueva forma de descansar. Creemos que empezar el día con el “pie derecho” hace la diferencia, por eso diseñamos cada colchón con tecnología avanzada, materiales de alto rendimiento y una comodidad pensada para ayudar a las personas a despertar renovadas, con el cuerpo y la mente en equilibrio.",
                 image: "assets/sec1-mision.png"
             },
             {
                 title: "Visión",
-                text: "Aspiramos a ser líderes en la industria del descanso, reconocidos por nuestra innovación constante y compromiso con la excelencia, ayudando a millones de personas a descubrir el poder transformador de un sueño reparador.",
+                text: "Aspiramos a transformar la manera en que las personas descansan, brindándoles la oportunidad de reiniciar su cuerpo y su mente cada noche. Visualizamos una experiencia de descanso que, con el tiempo, eleve la salud, rejuvenezca el cuerpo y se establezca como el nuevo estándar de calidad de sueño.",
                 image: "assets/sec1-bed.png"
             }
         ];
